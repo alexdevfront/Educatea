@@ -1,0 +1,228 @@
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/variables";
+@import "./node_modules/bootstrap/scss/variables-dark";
+@import "./node_modules/bootstrap/scss/maps";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/utilities";
+
+
+@import url('"https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+  --bs-body-font-family:'Nunito Sans', sans-serif;
+
+ }
+
+
+
+
+
+$custom-colors: (
+"eds-color-primary-50": #E6F0FF,
+"eds-color-primary-300":#589AFE,
+"eds-color-primary-500":#0568FD,
+"eds-color-primary-700":#044AB4,
+"eds-color-primary-900":#022C6A,
+"eds-color-neutral-50":#F6F7FC,
+"eds-color-neutral-100":#E8E8ED,
+"eds-color-neutral-200":#D2D2D6,
+"eds-color-neutral-300":#B6B6BA,
+"eds-color-neutral-400":#9D9DA1,
+"eds-color-neutral-500":#828285,
+"eds-color-neutral-600":#666669,
+"eds-color-neutral-700":#4D4D4F,
+"eds-color-neutral-800":#282829,
+"eds-color-neutral-900":#0C0C0D,
+
+
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$custom-spacers:(
+  0: 0,
+  1: .25rem,
+  2:  .5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+    6:  2rem,
+    7:  2.5rem,
+    8:  3.5rem,
+    9:  4rem,
+    10: 4.5rem,
+    11: 5rem,
+   
+);
+// $custom-spacers-negative:(
+//   0: 0,
+//   1: -.25rem,
+//   2: - .5rem,
+//   3: -1rem,
+//   4: -1.5rem,
+//   5: -3rem,
+//     6: - 2rem,
+//     7: - 2.5rem,
+//     8:  -3.5rem,
+//     9:  -4rem,
+//     10: -4.5rem,
+//     11: -5rem,
+   
+// );
+$utilities: map-merge(
+  $utilities,
+  (
+    "padding-x": (
+      responsive: true,
+      property: padding-right padding-left,
+      class: px,
+      values: $custom-spacers,
+    )
+  )
+);
+$utilities: map-merge(
+  $utilities,
+  (
+    "padding-y": (
+      responsive: true,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $custom-spacers,
+    )
+  )
+);
+$utilities: map-merge(
+  $utilities,
+  (
+    "padding-end": (
+      responsive: true,
+      property: padding-right,
+      class: pe,
+      values: $custom-spacers,
+    )
+  )
+);
+$utilities: map-merge(
+  $utilities,
+  (
+    "padding-top": (
+      responsive: true,
+      property: padding-top,
+      class: pt,
+      values: $custom-spacers,
+    )
+  )
+);
+
+//  $utilities: map-merge(
+//    $utilities,
+//    (
+//      "negative-margin-start": (
+//        responsive: true,
+//        property: margin-left,
+//        class: ms,
+//        values: $custom-spacers-negative,
+//      )
+//    )
+//  );
+
+
+
+// $font-sizes: (
+//   1: 4.5rem,
+//   2: 3.75rem,
+//   3: 2.875rem,
+//   4:2.25rem,
+//   5:1.875rem,
+//   6:1.625rem,
+//   7:1rem,
+//   8:.875rem,
+//   9:.75rem,
+// );
+
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "font-size": map-merge(
+//       map-get($utilities, "font-size"),
+//       (
+//         values: $font-sizes,
+//       ),
+//     ),
+//   )
+// );
+
+$custom-sizes: (
+  7: 4.5rem,
+  8: 3.75rem,
+  9: 2.875rem,
+  10:2.25rem,
+  11:1.875rem,
+  12:1.625rem,
+  13:1.25rem,
+  14:1rem, 
+  15:.875rem,
+  16:.625rem,
+  17:.75rem,
+);
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": (
+      property: font-size,
+      class: fs,
+      rfs: true,
+      responsive: true,
+      values: $custom-sizes,
+    )
+  )
+);
+
+
+$custom-line-height: (
+  1: 4.75rem,
+  2: 4rem,
+  3: 3.125rem,
+  4: 2.5rem,
+  5: 2.125rem,
+  6: 1.875rem,
+  7: 1.5rem,
+  8: 1.25rem,
+  9: 1.125rem,
+  10: 1rem,
+  11: .75rem,  
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "line-height": (
+      property: line-height,
+      class: lh,
+      responsive: true,
+      values: $custom-line-height,
+    )
+  )
+);
+
+// $custom-weight: (
+//   1: 400,
+//   2: 600,
+//   3: 700,
+
+// );
+
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "font-weight": map-merge(
+//       map-get($utilities, "font-weight"),
+//       (
+//         property: font-weight,
+//         class: fw,
+//         values: $custom-weight,
+//       ),
+//     ),
+//   )
+// );
+
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
